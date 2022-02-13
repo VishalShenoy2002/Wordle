@@ -12,4 +12,6 @@ app=Wordle(word_for_game)
 while app.can_attempt:
     word=input("\nGuess the Word :")
     app.attempt(word)
-print("The word is {}".format(word_for_game.upper()))
+
+if app.SOLVED_BEFORE_ALL_ATTEPMTS==False:
+    print("The word is {}".format(word_for_game.upper()))

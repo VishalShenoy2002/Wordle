@@ -4,6 +4,7 @@ class Wordle:
 
     NUMBER_OF_ATTEMPTS=6
     WORD_LENGTH=5
+    SOLVED_BEFORE_ALL_ATTEPMTS=False
 
     WARNING_COLOR=Fore.RED
     IN_WORD_COLOR=Fore.YELLOW
@@ -39,8 +40,9 @@ class Wordle:
 
             if self.isSolved:
                 self.displayWordsGuessed()
+                self.SOLVED_BEFORE_ALL_ATTEPMTS=True
                 self.displayMessage("You have Guessed the Word Correctly in {} attempts.".format(self.attepmts),self.CORRECT_WORD_COLOR)
-
+            
             else:
                 self.displayWordsGuessed()
 
