@@ -6,7 +6,6 @@ with open('words.txt','r') as f:
     f.close()
 
 word_for_game=random.choice(words)
-print(len(word_for_game))
 app=Wordle(word_for_game)
 
 while app.can_attempt:
