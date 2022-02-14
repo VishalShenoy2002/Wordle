@@ -104,28 +104,30 @@ class Wordle:
 
         print("  ".join(letters))
 
+    
     def checkResult(self,word:str):
-        
-        if not self.isSolved:
-            word_with_color=[]
-            for i in range(len(word)):
 
-                if  word[i] in self.secret_word[i]:
-                    word_with_color.append(self.displayLetter("{}".format(word[i]),self.IN_POSITION_COLOR))
-                    self.letters_in_positions_secret.append(word[i])
-                
-                
-                elif word[i] in self.secret_word:
-                    word_with_color.append(self.displayLetter("{}".format(word[i]),self.IN_WORD_COLOR))
-                    self.letters_in_secret.append(word[i])
+        self.secret_word_count={key:self.secret_word.count(key) for key in ascii_uppercase}
+        word_with_color=[]
 
-                else:
-                    word_with_color.append(self.displayLetter("{}".format(word[i]),self.WARNING_COLOR))
-                    self.letters_not_in_secret.append(word[i])
+        for i in range(len(word)):
 
+            if self.secret_word_count[word[i]] !=0 and word[i]==self.secret_word[i]:
+                word_with_color.append(self.displayLetter("{}".format(word[i]),self.IN_POSITION_COLOR))
+                self.letters_in_positions_secret.append(word[i])
+                self.secret_word_count[word[i]]-=1
             
-            
-            return "  ".join(word_with_color)
+            elif self.secret_word_count[word[i]] !=0 and word[i] in self.secret_word:
+                word_with_color.append(self.displayLetter("{}".format(word[i]),self.IN_WORD_COLOR))
+                self.letters_in_secret.append(word[i])
+                self.secret_word_count[word[i]]-=1
+
+            elif self.secret_word_count[word[i]]==0 or word[i] not in self.secret_word:
+                word_with_color.append(self.displayLetter("{}".format(word[i]),self.WARNING_COLOR))
+                self.letters_not_in_secret.append(word[i])
+                self.secret_word_count[word[i]]-=1
+                
+        return "  ".join(word_with_color)
 
 
 
