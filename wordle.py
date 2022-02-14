@@ -1,4 +1,4 @@
-from colorama import Fore
+from colorama import Fore,init
 from string import ascii_uppercase
 
 class Wordle:
@@ -16,6 +16,9 @@ class Wordle:
 
 
     def __init__(self,secret_word:str):
+
+        
+        init(convert=True) # Allowing the program to convert colors in the command line.
 
         self.word=""
         self.secret_word=secret_word.upper()
