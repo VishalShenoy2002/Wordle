@@ -20,7 +20,7 @@ Copy this Link in the search bar of the browser you prefer.
 https://github.com/VishalShenoy2002/Wordle
 ```
 Find the code Button
-[!Screenshot](https://user-images.githubusercontent.com/61897464/153996484-bf32f185-a6b3-4581-871c-7476ff291f13.png)
+![Screenshot](https://user-images.githubusercontent.com/61897464/153996484-bf32f185-a6b3-4581-871c-7476ff291f13.png)
 
 Click on the Download Zip Button
 
@@ -31,5 +31,5 @@ python main.py
 
 ### Screenshots Of the Game
 
-[!Screenshot](https://user-images.githubusercontent.com/61897464/153997144-3c9bdb55-a30a-4bb1-af7e-3930cdccefce.png)
+![Screenshot](https://user-images.githubusercontent.com/61897464/153997144-3c9bdb55-a30a-4bb1-af7e-3930cdccefce.png)
 
